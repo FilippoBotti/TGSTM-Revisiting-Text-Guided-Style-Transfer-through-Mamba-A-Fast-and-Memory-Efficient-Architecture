@@ -2,14 +2,13 @@
 *Authors: Filippo Botti, Alex Ergasti, Tomaso Fontanini and Andrea Prati*
 <br>[ArXiv](...)
 
-[![PWC](./resources/risultati.pdf)
-
 This repository is the official implementation of Revisiting Text-Guided Style Transfer through Mamba: A Fast and Memory-Efficient Architecture
 This paper explores a novel design of Mamba to perform text-guided style transfer.
 
 ## Results presentation 
+
 <p align="center">
-<img src="https://github.com/FilippoBotti/Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/resources/results.png" width="90%" height="90%">
+<img src="https://github.com/FilippoBotti/TGSTM-Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/blob/main/resources/results.png" width="90%" height="90%">
 </p>
 Examples of generated images from our Mamba model given a caption and a content image. <br>
 
