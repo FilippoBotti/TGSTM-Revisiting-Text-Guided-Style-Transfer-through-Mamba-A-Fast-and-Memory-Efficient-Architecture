@@ -45,9 +45,9 @@ sh scripts/train.sh
 ```
 
 ## Code explanation
-The full model (fig. 2(a)) can be found at [StyTr.py](https://github.com/FilippoBotti/Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/models/StyTr.py). In this file you can find the whole architecture. <br>
-The Mamba Decoder (fig. 2 (b) module can be found at [mamba.py](https://github.com/FilippoBotti/Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/models/mamba.py) <br>
-Finally, our VSSM's implementation (both with a single input and with two input merged for style transfer) can be found at [single_direction_vssm.py](https://github.com/FilippoBotti/Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/vssm/mamba_arch.py).
+The full model (fig. 2(a)) can be found at [StyTr.py](https://github.com/FilippoBotti/TGSTM-Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/blob/main/models/mamba.py). In this file you can find the whole architecture. <br>
+The Mamba Decoder (fig. 2 (b) module can be found at [mamba.py](https://github.com/FilippoBotti/TGSTM-Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/blob/main/models/mamba.py)<br>
+Finally, our VSSM's implementation (both with a single input and with two input merged for style transfer) can be found at [single_direction_vssm.py](https://github.com/FilippoBotti/TGSTM-Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/blob/main/vssm/single_direction_vssm_arch.py).
 
 <!-- ### Reference -->
 <!-- If you find our work useful in your research, please cite our paper using the following BibTeX entry ~ Thank you ^ . ^. Paper Link [pdf](https://www.arxiv.org/abs/2409.10385)<br>  -->
