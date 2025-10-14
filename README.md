@@ -15,7 +15,7 @@ Examples of generated images from our Mamba model given a caption and a content 
 
 ## Framework
 <p align="center">
-<img src="https://github.com/FilippoBotti/Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/resources/arch.png" width="100%" height="100%">
+<img src="https://github.com/FilippoBotti/TGSTM-Revisiting-Text-Guided-Style-Transfer-through-Mamba-A-Fast-and-Memory-Efficient-Architecture/blob/main/resources/arch.png" width="100%" height="100%">
 </p> 
 a) Full architecture. It takes as input a content image and a style caption and generates the content image stylized as the style caption. b)
 Our Mamba Decoder, which takes both style and content as input. In particular it generates matrices ∆ and B from style embedding, while C from
