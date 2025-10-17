@@ -93,8 +93,8 @@ class SS2D(nn.Module):
         self.out_norm = nn.LayerNorm(self.d_inner)
         self.out_proj = nn.Linear(self.d_inner, self.d_model, bias=bias, **factory_kwargs)
         self.dropout = nn.Dropout(dropout) if dropout > 0. else None
-        self.bs_from_style = torch.nn.Linear(1024, 4* 16 * 784)
-        self.dts_from_style = torch.nn.Linear(1024,4* 32 * 784)
+        self.bs_from_style = torch.nn.Linear(1024,  16 * 784)
+        self.dts_from_style = torch.nn.Linear(1024, 32 * 784)
 
     @staticmethod
     def dt_init(dt_rank, d_inner, dt_scale=1.0, dt_init="random", dt_min=0.001, dt_max=0.1, dt_init_floor=1e-4,
@@ -169,8 +169,8 @@ class SS2D(nn.Module):
 
         x_dbl = torch.einsum("b k d l, k c d -> b k c l", x.view(B, K, -1, L), self.x_proj_weight)
         if style is not None:
-            dts =  self.dts_from_style(style).view(B, K, -1, 28*28).contiguous()  # (B, K, d_state, L)
-            Bs = self.bs_from_style(style).view(B, K, -1, 28*28).contiguous()  # (B, K, d_state, L)
+            dts =  self.dts_from_style(style).repeat(self.args.batch_size,1,1).view(B, K, -1, 28*28).contiguous()  # (B, K, d_state, L)
+            Bs = self.bs_from_style(style).repeat(self.args.batch_size,1,1).view(B, K, -1, 28*28).contiguous()  # (B, K, d_state, L)
             if L != 28*28:
                 dts = F.interpolate(dts, size=(32, 64*64), mode='bilinear', align_corners=False)
                 Bs = F.interpolate(Bs, size=(16, 64*64), mode='bilinear', align_corners=False)
