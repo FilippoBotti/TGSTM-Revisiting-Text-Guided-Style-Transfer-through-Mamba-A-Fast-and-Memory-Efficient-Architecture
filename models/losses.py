@@ -44,8 +44,8 @@ class StyLosses:
     def directional_clip_loss(self, stylized_image, content_image, text_features, source_text_features):
         content_feat = self.clip_model.encode_image(func.clip_normalize(content_image))
         stylized_feat = self.clip_model.encode_image(func.clip_normalize(stylized_image))
-        delta_img = F.normalize(stylized_feat - content_feat, dim=-1)
-        delta_text = F.normalize(text_features - source_text_features, dim=-1)
+        delta_img = F.normalize((stylized_feat - content_feat), dim=-1)
+        delta_text = F.normalize((text_features - source_text_features), dim=-1)
 
         loss = (1 - torch.cosine_similarity(delta_img, delta_text, dim=1)).mean()
         
