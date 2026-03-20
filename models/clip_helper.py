@@ -16,7 +16,7 @@ class ClipWrapper():
     
         self.device = device
         
-        self.ssim = StructuralSimilarityIndexMeasure().to(device)
+        self.ssim = StructuralSimilarityIndexMeasure(data_range=1.0).to(device)
         self.augmentations = transforms.Compose([
             transforms.RandomPerspective(fill=0, p=1, distortion_scale=0.5),
             transforms.Resize(224)
@@ -75,7 +75,8 @@ class ClipWrapper():
         return score
     
     
-    def get_ssim(self, content_images, stylized_images):
-        score = self.ssim(stylized_images, content_images)
+    def get_ssim(self, x, y):
+        x = x.clamp(0, 1)
+        y = y.clamp(0, 1)
         return score
 
